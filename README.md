@@ -12,11 +12,10 @@ https://github.com/user-attachments/assets/50579423-fa5a-4ccc-8622-2547fe841414
 
 ## Features
 **Random Maze Generation**
-- Uses DFS with backtracking
+- Uses DFS with backtracking to create a fully connected random maze
 - Efficient cell tracking using bitwise flags and coordinate pairs
 
  **Maze Solving**
-
 - Uses BFS to find the shortest path
 
 - Maintains a stack and a vector during traversal to backtrack and extract the shortest route
@@ -27,18 +26,20 @@ https://github.com/user-attachments/assets/50579423-fa5a-4ccc-8622-2547fe841414
 
 ## Algorithm Breakdown
 **Maze Generation (DFS)**
-- Each explored cell is marked using enum/bitwise operator flags.
+- A random cell is selected as the start point
 
-- Cell positions are stored as pairs of integers: (x, y).
+- The algorithm uses a stack to store the current path and bitwise flags to track cell walls and visited status
 
-- Explored cells are pushed to the stack.
+- Neighbors are chosen randomly and connected by "breaking" walls
 
-- When no unexplored neighbors are left, the algorithm backtracks by popping from the stack.
+- Backtracks when there are no unvisited neighbors
 
 **Maze Solving (BFS)**
 
-- Explores the maze level-by-level to ensure the shortest path is found.
+- A stack and vector are used to track explored paths and determine the shortest route.
 
-- Tracks visited nodes using a stack and a vector.
+- As the maze is solved, visited cells are drawn in cyan.
 
-- During backtracking, unnecessary paths are removed from the vector, leaving only the shortest valid route.
+- Backtracked dead ends are removed from the shortest path vector.
+
+- Final shortest path is displayed in yellow.
