@@ -27,11 +27,11 @@ https://github.com/user-attachments/assets/50579423-fa5a-4ccc-8622-2547fe841414
 
 ## Algorithm Breakdown
 **Maze Generation (DFS)**
-- Each cell is marked using enum/bitwise operator flags.
+- Each explored cell is marked using enum/bitwise operator flags.
 
-- Cells are stored as pairs of integers: (x, y).
+- Cell positions are stored as pairs of integers: (x, y).
 
-- A stack is used to push explored cells.
+- Explored cells are pushed to the stack.
 
 - When no unexplored neighbors are left, the algorithm backtracks by popping from the stack.
 
